@@ -1,0 +1,235 @@
+.projects {
+  background: linear-gradient(135deg, rgba(0, 204, 255, 0.05), rgba(255, 0, 128, 0.05));
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+.project-card .cyber-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover .cyber-card {
+  border-color: rgba(0, 255, 136, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  color: #00ff88;
+  padding: 15px;
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.project-status {
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  color: #000000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-period {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  font-family: 'Orbitron', monospace;
+}
+
+.project-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00ccff;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.project-features {
+  margin-bottom: 25px;
+}
+
+.project-features h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-features li {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.project-features li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #00ccff;
+  font-size: 0.7rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.tech-tag {
+  background: rgba(0, 204, 255, 0.2);
+  color: #00ccff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 204, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(0, 204, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.project-link:hover::before {
+  left: 100%;
+}
+
+.github {
+  background: rgba(0, 255, 136, 0.1);
+  border: 2px solid #00ff88;
+  color: #00ff88;
+}
+
+.github:hover {
+  background: #00ff88;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.demo {
+  background: rgba(0, 204, 255, 0.1);
+  border: 2px solid #00ccff;
+  color: #00ccff;
+}
+
+.demo:hover {
+  background: #00ccff;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+}
+
+/* Special effects for featured project */
+.project-card:first-child .cyber-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+  animation: featured-glow 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes featured-glow {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .project-meta {
+    align-items: center;
+  }
+  
+  .project-links {
+    flex-direction: column;
+  }
+}

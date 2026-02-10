@@ -1,0 +1,144 @@
+.skills {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-category .cyber-card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover .cyber-card {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 136, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
+
+.category-icon {
+  font-size: 1.8rem;
+  color: #00ff88;
+  display: flex;
+  align-items: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-item {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 204, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  border-color: rgba(0, 204, 255, 0.5);
+  background: rgba(0, 204, 255, 0.1);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.skill-icon {
+  font-size: 1.2rem;
+  color: #00ccff;
+}
+
+.skill-percentage {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  color: #00ff88;
+  font-size: 0.9rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff88, #00ccff);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Skill level color variations */
+.skill-item:nth-child(1) .skill-progress {
+  background: linear-gradient(90deg, #ff0080, #ff4080);
+}
+
+.skill-item:nth-child(2) .skill-progress {
+  background: linear-gradient(90deg, #00ff88, #40ff88);
+}
+
+.skill-item:nth-child(3) .skill-progress {
+  background: linear-gradient(90deg, #00ccff, #40ccff);
+}
+
+.skill-item:nth-child(4) .skill-progress {
+  background: linear-gradient(90deg, #ff8000, #ff9040);
+}
+
+.skill-item:nth-child(5) .skill-progress {
+  background: linear-gradient(90deg, #8000ff, #9040ff);
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .skill-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .skill-percentage {
+    align-self: flex-end;
+  }
+}
