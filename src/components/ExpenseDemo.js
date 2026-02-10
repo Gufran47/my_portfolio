@@ -33,7 +33,7 @@ const ExpenseDemo = ({ onClose }) => {
         <div className="demo-content">
           <div className="demo-image-container">
             <img 
-              src={`${process.env.PUBLIC_URL}/images/expense.png`}
+              src="/images/expense.png"
               alt="Expense Calculator Web Application Demo"
               className="demo-image"
             />

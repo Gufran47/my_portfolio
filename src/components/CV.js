@@ -5,12 +5,12 @@ import './CV.css';
 
 const CV = () => {
   const handleViewCV = () => {
-    window.open(`${process.env.PUBLIC_URL}/images/Updated CV.pdf`, '_blank');
+    window.open('/images/Updated CV.pdf', '_blank');
   };
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/images/Updated CV.pdf`;
+    link.href = '/images/Updated CV.pdf';
     link.download = 'Gufran_Ahmad_CV.pdf';
     document.body.appendChild(link);
     link.click();

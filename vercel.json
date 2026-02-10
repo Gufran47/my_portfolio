@@ -11,7 +11,19 @@
   ],
   "routes": [
     {
+      "src": "/images/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      }
+    },
+    {
       "src": "/static/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      }
+    },
+    {
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|pdf))",
       "headers": {
         "cache-control": "s-maxage=31536000,immutable"
       }
