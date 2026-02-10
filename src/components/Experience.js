@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCertificate, FaGraduationCap, FaCode, FaAward } from 'react-icons/fa';
+import { FaCode, FaAward } from 'react-icons/fa';
 import './Experience.css';
 
 const Experience = () => {
