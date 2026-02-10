@@ -74,7 +74,7 @@ const Hero = () => {
               <div className="profile-image-wrapper">
                 {!imageError ? (
                   <img 
-                    src={`${process.env.PUBLIC_URL}/images/profile.jpg`}
+                    src="https://drive.google.com/uc?export=view&id=148m3PGbIJBYftpRauL4E-l_VjyTa8oT3"
                     alt="Gufran Ahmad - Cybersecurity Developer" 
                     className="profile-image"
                     onError={handleImageError}
