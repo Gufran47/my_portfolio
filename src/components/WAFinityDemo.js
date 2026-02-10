@@ -33,7 +33,7 @@ const WAFinityDemo = ({ onClose }) => {
         <div className="demo-content">
           <div className="demo-image-container">
             <img 
-              src="/images/swafinity-demo.png" 
+              src={`${process.env.PUBLIC_URL}/images/swafinity-demo.png`}
               alt="WAFinity - Intelligent Web Application Firewall Demo"
               className="demo-image"
             />
